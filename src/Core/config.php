@@ -1,3 +1,3 @@
 <?php
 define('TEMPLATE_DIR', __DIR__ . '/../Templates/');
-define('PROJECT_ROOT', '/my-mvc-project');
+define('PROJECT_ROOT', '/php-mvc-example');

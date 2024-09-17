@@ -5,8 +5,8 @@ Sigue estos pasos para instalar y configurar el proyecto en tu entorno local.
 ## 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tuusuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/leonmjuancarlos/php-mvc-example.git
+cd php-mvc-example
 ```
 
 ## 2. Iniciar Composer
@@ -17,41 +17,26 @@ Asegúrate de tener instalado [Composer](https://getcomposer.org/).
 composer install
 ```
 
-## 3. Configurar las variables de entorno
+## Configuración
 
-Copia el archivo `.env.example` a `.env` y configura las variables necesarias.
+El proyecto esta configurado para trabajar directamente con XAMPP en el servidor Apache y MySQL.
 
-```bash
-cp .env.example .env
-```
-
-Luego, genera la clave de la aplicación (si estás usando un framework como Laravel).
-
-```bash
-php artisan key:generate
-```
-
-## 4. Ejecutar migraciones (opcional)
-
-Si el proyecto incluye una base de datos, ejecuta las migraciones.
-
-```bash
-php artisan migrate
-```
-
-## Configuración necesaria
+Si quieres modificar el nombre del proyecto debes modificar lo siguiente:
 
 - `.htaccess`: modificar el `RewriteBase` con la ruta de tu proyecto (si usas Apache).
-- `define('PROJECT_ROOT', '/my-mvc-project');`
-- Configuración de `src/Core/Database.php`.
+- `src/Core/config.php`: En `define('PROJECT_ROOT', '/my-mvc-project');`, cambiar `php-mvc-example` con el nombre de tu proyecto.
+
+Para la configuración de la base de datos tanto si usas MySQL como si no:
+
+- `src/Core/Database.php`: Configura aquí las credenciales y los datos de conexión. No se usan variables de entorno para la conexión, aunque es imprescindible usarlas en producción.
 
 ## TODO
 
-- Rutas dinamicas sin query
-- Creación tablas desde php
+- Usamos _Query Params_ para el dinamismo en las rutas. Hay que implementar rutas dinámicas tipo `/users/{id}` en vez de `/users?id=userId`.
+- La creación inicial de las tablas de la base de datos se debe hacer directamente desde consola o desde un gestor como _PhpMyAdmin_. Sería bueno implementarlo en el código para que se automatice.
 
 ## 5. Levantar el servidor
 
 Hemos usado XAMPP para todo el desarrollo. Fundamentalmente, el servidor web Apache y la BBDD MySQL.
 
-Ahora deberías poder acceder a la aplicación en `http://localhost`.
+Ahora deberías poder acceder a la aplicación en `http://localhost/php-mvc-example/users/`.

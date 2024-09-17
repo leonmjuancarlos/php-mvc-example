@@ -1,7 +1,7 @@
 RewriteEngine On
 # Modificar con nombre de tu proyecto en htdocs
-# En mi caso esta en C:/xampp/htdocs/my-mvc-project/
-RewriteBase /my-mvc-project/
+# En mi caso esta en C:/xampp/htdocs/php-mvc-example/
+RewriteBase /php-mvc-example/
 
 # Evitar el /public en la URL
 RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
