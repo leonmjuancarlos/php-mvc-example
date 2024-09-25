@@ -4,7 +4,10 @@ Sigue estos pasos para instalar y configurar el proyecto en tu entorno local.
 
 ## 1. Clonar el repositorio
 
+En nuestro caso usamos XAMPP y Windows.
+
 ```bash
+cd C:/xampp/htdocs/
 git clone https://github.com/leonmjuancarlos/php-mvc-example.git
 cd php-mvc-example
 ```
@@ -17,7 +20,7 @@ Asegúrate de tener instalado [Composer](https://getcomposer.org/).
 composer install
 ```
 
-## Configuración
+## 3. Configuración
 
 El proyecto esta configurado para trabajar directamente con XAMPP en el servidor Apache y MySQL.
 
